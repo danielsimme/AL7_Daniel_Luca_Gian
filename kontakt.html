@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontaktformular – GRIT</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/kontakt.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="site-header">
+        <div class="header-content">
+          <a href="index.html" class="logo">GRIT</a>
+          <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="#">Über uns</a>
+            <a href="kontakt.html">Kontakt</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="site-main">
+        <section class="form-section">
+          <h1>Kontakt</h1>
+          <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">E-Mail</label>
+            <input type="text" id="email" name="email" required />
+
+            <label for="subject">Betreff</label>
+            <input type="text" id="subject" name="subject" />
+
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <button type="submit">Absenden</button>
+          </form>
+          <div id="formMessage"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; 2025 GRIT</p>
+        <nav>
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+          <a href="#">AGB</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/kontakt.js"></script>
+  </body>
+</html>
