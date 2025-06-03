@@ -1,50 +1,78 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GRIT</title>
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body>
-    <div class="page-wrapper">
-      <header class="site-header">
-        <div class="header-content">
-          <a href="index.html" class="logo">GRIT</a>
-          <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="#">Über uns</a>
-            <a href="kontakt.html">Kontakt</a>
-          </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact Athletics – Startseite</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">Impact Athletics</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sortiment.html">Sortiment</a></li>
+          <li><a href="promotion.html">Promotion</a></li>
+        </ul>
+        <div class="burger">
+          <span></span><span></span><span></span>
         </div>
-      </header>
-
-      <main class="site-main">
-        <section class="hero">
-          <div class="hero-text">
-            <h1>Martial Arts. Reimagined.</h1>
-            <p>High-end fightwear für moderne Kämpfer:innen</p>
-            <a href="#" class="btn-discover">Jetzt Sortiment entdecken</a>
-          </div>
-          <img
-            src="images/hero.jpg"
-            alt="Fighter in stylish gear"
-            class="hero-img"
-          />
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p>&copy; 2025 GRIT</p>
-        <nav>
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
-          <a href="#">AGB</a>
-        </nav>
-      </footer>
+      </nav>
     </div>
-    <script src="js/common.js"></script>
-    <script src="js/index.js"></script>
-  </body>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="hero">
+      <h1>Dein Shop für stylische Kampfsport-Ausrüstung</h1>
+      <p>Innovativ, funktional, stylisch – wie gemacht für dein Training.</p>
+    </section>
+
+    <section class="categories">
+      <h2>Unsere Hauptkategorien</h2>
+      <div class="category-grid">
+        <div class="category-card">
+          <img src="images/kampfsportart/MuayThai.png" alt="Muay Thai">
+          <p>Muay Thai</p>
+        </div>
+        <div class="category-card">
+          <img src="images/kampfsportart/MMA.jpeg" alt="MMA">
+          <p>MMA</p>
+        </div>
+        <div class="category-card">
+          <img src="images/kampfsportart/Boxen.png" alt="Boxen">
+          <p>Boxen</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <h2>Aktuelle Highlights</h2>
+      <div class="slider">
+        <div class="slide">
+          <img src="images/produkt/Impact-Pro-Fight-Gloves.png" alt="Impact Gloves">
+        </div>
+        <div class="slide">
+          <img src="images/produkt/StormDry-Training-Shorts.png" alt="Training Shorts">
+        </div>
+        <div class="slide">
+          <img src="images/produkt/Warrior-Shin-Guards.png" alt="Shin Guards">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 Impact Athletics</p>
+      <a href="#">Impressum</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
 </html>

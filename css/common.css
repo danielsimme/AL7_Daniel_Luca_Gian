@@ -1,114 +1,310 @@
-/* === common.css === */
-
-/* Base styles */
+/* Import Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;700&display=swap");
 
+/* Grundlayout */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body,
-html {
-  font-family: "Satoshi", sans-serif;
-  background-color: #fff;
-  color: #111;
-  height: 100%;
+body {
+  font-family: 'Satoshi', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #222;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* Layout */
-.page-wrapper {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-}
-
-.site-header,
-.site-footer {
-  background-color: #000;
+/* Header */
+header {
+  background: #111;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
-.header-content {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
-.main-nav a {
-  position: relative;
-  display: inline-block;
-  margin-left: 1rem;
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.main-nav a::after {
-  content: "";
+.nav-links a::after {
+  content: '';
   position: absolute;
+  left: 0;
+  bottom: -4px;
   width: 100%;
   height: 2px;
   background: #fff;
-  left: 0;
-  bottom: -4px;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease;
 }
 
-.main-nav a:hover::after {
+.nav-links a:hover {
+  color: #ddd;
+}
+
+.nav-links a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.site-footer {
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: white;
   text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid #333;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-.site-footer nav {
-  margin-top: 0.5rem;
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
 }
 
-.site-footer a {
-  color: #aaa;
-  margin: 0 0.75rem;
-  font-size: 0.875rem;
-  transition: color 0.3s;
+footer a:hover {
+  color: white;
 }
 
-.site-footer a:hover {
-  color: #fff;
+/* Hero Section */
+.hero {
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #111, #333);
+  color: white;
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* Kategorien */
+.categories {
+  padding: 2rem;
+  text-align: left;
+}
 
-  .main-nav {
-    margin-top: 0.5rem;
-  }
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-  .main-nav a {
-    margin-left: 0;
-    margin-right: 1rem;
-  }
+.category-card {
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.category-card img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/* Produktliste */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Produkthighlight */
+
+.highlight {
+  padding: 2rem;
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Promotion */
+.promotion-hero {
+  padding: 3rem 2rem;
+  background: #eee;
+  text-align: left;
+}
+
+.promotion-highlight {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.promo-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: left;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.promo-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.promo-card:hover img {
+  transform: scale(1.05);
+}
+
+.slider img {
+  max-height: 180px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Formular auf Promotionseite */
+.form-placeholder {
+  text-align: left;
+  padding: 3rem 2rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+form label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: inline-block;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+form button {
+  background: #111;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #333;
+}
+
+#formMessage {
+  font-weight: 500;
 }

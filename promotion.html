@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact Athletics – Promotion</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo">Impact Athletics</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sortiment.html">Sortiment</a></li>
+          <li><a href="promotion.html">Promotion</a></li>
+        </ul>
+        <div class="burger">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="promotion-hero">
+      <h1>Special Deal der Woche</h1>
+      <p>Nur diese Woche: 20% Rabatt auf alle MMA-Produkte!</p>
+    </section>
+
+    <section class="promotion-highlight">
+      <article class="promo-card">
+        <img src="images/produkt/Titan-Pro-Headgear.png" alt="Promo Produkt" />
+        <h3>Titan Pro Headgear</h3>
+        <p><s>CHF 64.90</s> <strong>CHF 51.90</strong></p>
+      </article>
+    </section>
+
+    <section class="form-placeholder">
+      <h2>Bleib informiert!</h2>
+      <form id="promoForm" novalidate>
+        <div>
+          <label for="vorname">Vorname *</label>
+          <input type="text" id="vorname" name="vorname" required />
+        </div>
+        <div>
+          <label for="nachname">Nachname *</label>
+          <input type="text" id="nachname" name="nachname" required />
+        </div>
+        <div>
+          <label for="email">E-Mail *</label>
+          <input type="text" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="nachricht">Nachricht (optional)</label>
+          <textarea id="nachricht" name="nachricht" rows="4"></textarea>
+        </div>
+        <button type="submit">Absenden</button>
+        <p id="formMessage" style="margin-top:1rem;"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 Impact Athletics</p>
+      <a href="#">Impressum</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/dataBaseClient.js"></script>
+  <script src="js/promotion.js"></script>  
+</body>
+</html>
