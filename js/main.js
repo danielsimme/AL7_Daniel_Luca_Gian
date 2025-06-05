@@ -1,37 +1,38 @@
-// === Burger Menü Toggle ===
-const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
+// Burger-Menü und Navigationselement selektieren
+const burger = document.querySelector(".burger");
+const nav = document.querySelector(".nav-links");
 
-if (burger) {
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-active');
+// Falls beide Elemente vorhanden sind, Toggle-Klickfunktion aktivieren
+if (burger && nav) {
+  burger.addEventListener("click", () => {
+    // Menü anzeigen/verstecken bei Klick auf das Burger-Icon
+    nav.classList.toggle("nav-active");
   });
 }
 
-// === Produktsuche (Sortiment Seite) ===
-const searchInput = document.getElementById('searchInput');
-const productCards = document.querySelectorAll('.product-card');
+// Icon-Dateinamen, die zufällig im Hintergrund schweben sollen
+const icons = ['boxglove.svg', 'muaythai-shorts.svg', 'belt.svg'];
 
-if (searchInput) {
-  searchInput.addEventListener('input', (e) => {
-    const value = e.target.value.toLowerCase();
-    productCards.forEach(card => {
-      const title = card.querySelector('h3').textContent.toLowerCase();
-      card.style.display = title.includes(value) ? 'block' : 'none';
-    });
-  });
-}
+// Container für die Icons im Hintergrund
+const layer = document.querySelector('.icon-layer');
 
-// === Bonus: Slider Autoplay (Startseite) ===
-const slider = document.querySelector('.slider');
-if (slider) {
-  let scrollAmount = 0;
-  setInterval(() => {
-    slider.scrollBy({ left: 300, behavior: 'smooth' });
-    scrollAmount += 300;
-    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-      scrollAmount = 0;
-      slider.scrollTo({ left: 0, behavior: 'smooth' });
-    }
-  }, 3000);
+// 15 Icons erzeugen und zufällig im Viewport platzieren
+for (let i = 0; i < 15; i++) {
+  const img = document.createElement('img');
+
+  // Abwechselnd Icon-Quellen zuweisen
+  img.src = `images/icons/${icons[i % icons.length]}`;
+
+  // Klasse hinzufügen für allgemeine Styles
+  img.classList.add('icon');
+
+  // Zufällige Startposition im sichtbaren Bereich
+  img.style.left = Math.random() * 100 + 'vw';
+  img.style.top = Math.random() * 100 + 'vh';
+
+  // Zufällige Animationsdauer für Float-Effekt
+  img.style.animationDuration = 15 + Math.random() * 10 + 's';
+
+  // Icon dem Hintergrund-Container hinzufügen
+  layer.appendChild(img);
 }

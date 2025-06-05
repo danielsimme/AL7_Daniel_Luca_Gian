@@ -1,7 +1,7 @@
-/* Import Google Font */
+/* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;700&display=swap");
 
-/* Grundlayout */
+/* ========== Grundlayout ========== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,13 +15,17 @@ body {
   color: #222;
 }
 
+p {
+  margin-bottom: 0.75rem;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* Header */
+/* ========== Header ========== */
 header {
   background: #111;
   color: #fff;
@@ -32,22 +36,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .nav-links {
   display: flex;
-  list-style: none;
   gap: 1.5rem;
+  list-style: none;
 }
 
 .nav-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -79,81 +88,170 @@ header {
 .burger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   cursor: pointer;
 }
 
 .burger span {
   width: 25px;
   height: 3px;
-  background: white;
+  background: #fff;
+  border-radius: 2px;
 }
 
-/* Footer */
-footer {
-  background: #111;
-  color: white;
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    flex-direction: column;
+    background: #111;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+/* ========== Footer ========== */
+.site-footer {
+  background: #f2f2f2;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #333;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid #ccc;
 }
 
-footer a {
-  color: #ccc;
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: #333;
   text-decoration: none;
-  margin-left: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
-footer a:hover {
-  color: white;
+.footer-links a:hover {
+  color: #0077cc;
 }
 
-/* Hero Section */
+/* ========== Hero & CTA ========== */
 .hero {
-  padding: 4rem 1rem;
   background: linear-gradient(to right, #111, #333);
-  color: white;
+  color: #fff;
   text-align: left;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 4rem 2rem;
 }
 
-/* Kategorien */
+.cta-section {
+  max-width: 1200px;
+  padding: 2rem;
+  text-align: left;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background: #ffcc00;
+  color: #111;
+}
+
+/* Floating Icons Background */
+.icon-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-icon {
+  position: absolute;
+  opacity: 0.07;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-200vh); }
+}
+
+/* ========== Kategorien ========== */
 .categories {
   padding: 2rem;
   text-align: left;
 }
 
 .category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .category-card {
-  background: white;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
 }
 
 .category-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
 
 .category-card img {
   width: 100%;
-  max-height: 120px;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 
-/* Produktliste */
+/* ========== Produktliste ========== */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -162,12 +260,12 @@ footer a:hover {
 }
 
 .product-card {
-  background: white;
+  background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: left;
   padding: 1rem;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -178,46 +276,21 @@ footer a:hover {
 
 .product-card img {
   width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
   margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
 .product-card:hover img {
   transform: scale(1.05);
 }
 
-/* Produkthighlight */
-
+/* ========== Produkthighlight ========== */
 .highlight {
   padding: 2rem;
   text-align: left;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
-.slider {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding: 1rem 0;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-.slide {
-  flex: 0 0 auto;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 1rem;
-  min-width: 200px;
-  text-align: center;
-}
-
-/* Promotion */
+/* ========== Promotion ========== */
 .promotion-hero {
   padding: 3rem 2rem;
   background: #eee;
@@ -231,12 +304,12 @@ footer a:hover {
 }
 
 .promo-card {
-  background: white;
+  background: #fff;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  text-align: left;
   max-width: 300px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -248,8 +321,8 @@ footer a:hover {
 .promo-card img {
   max-width: 100%;
   border-radius: 8px;
-  transition: transform 0.3s ease;
   margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
 .promo-card:hover img {
@@ -259,14 +332,14 @@ footer a:hover {
 .slider img {
   max-height: 180px;
   object-fit: contain;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
 }
 
-/* Formular auf Promotionseite */
+/* ========== Formular (Promotion) ========== */
 .form-placeholder {
-  text-align: left;
   padding: 3rem 2rem;
+  text-align: left;
 }
 
 form {
@@ -278,7 +351,6 @@ form {
 form label {
   font-weight: 500;
   margin-bottom: 0.25rem;
-  display: inline-block;
 }
 
 form input,
@@ -292,7 +364,7 @@ form textarea {
 
 form button {
   background: #111;
-  color: white;
+  color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 6px;

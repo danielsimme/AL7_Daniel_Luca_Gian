@@ -1,4 +1,4 @@
-// promotion.js – Formularvalidierung und DB-Speicherung für Promotionseite
+// promotion.js - Formularvalidierung und DB-Speicherung für Promotionseite
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("promoForm");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         if (result && result[0]?.affectedRows === 1) {
           message.style.color = "green";
-          message.textContent = "Vielen Dank für deine Nachricht!";
+          message.textContent = "Vielen Dank für deine Registration!";
           form.reset();
         } else {
           showError("Es gab ein Problem beim Speichern. Bitte versuch es später erneut.");
