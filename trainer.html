@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reaction Trainer</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/trainer.css" />
+</head>
+<!-- Header -->
+<header>
+  <div class="header-container">
+    <div class="logo">Impact Athletics</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sortiment.html">Sortiment</a></li>
+        <li><a href="promotion.html">Promotion</a></li>
+        <li><a href="trainer.html">Trainer</a></li>
+      </ul>
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <!-- Main -->
+<main class="reaction-trainer">
+ <h1>Reaction Trainer 🥊</h1>
+    <p>Schlage den Gegner mit der richtigen Taste!</p>
+    <ul class="key-instructions">
+      <li><strong>A</strong> – Linker Haken</li>
+      <li><strong>S</strong> – Ducken</li>
+      <li><strong>D</strong> – Rechter Haken</li>
+    </ul>
+
+    <button class="btn-start" id="startBtn">Spiel starten</button>
+
+    <div id="gameHUD">
+      <div class="opponent">
+        <img src="images/icon/opponent.svg" alt="Gegner" id="opponentImage" />
+        <div id="prompt"></div>
+        <img src="images/icon/048-boxing glove.svg" alt="Glove Left" class="glove glove-left" />
+        <img src="images/icon/048-boxing glove.svg" alt="Glove Right" class="glove glove-right" />
+      </div>
+      <div class="result" id="result"></div>
+    </div>
+</main>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>Disclaimer: Das ist ein Schulprojekt und keine reale Website.</p>
+    <p>Erstellt von Daniel, Luca und Gian.</p>
+    <div class="footer-links">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <script src="js/trainer.js"></script>
+</body>
+</html>

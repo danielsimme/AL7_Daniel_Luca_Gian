@@ -1,0 +1,35 @@
+/* ========== Hero & CTA ========== */
+.hero {
+  background: linear-gradient(to right, #111, #333);
+  color: #fff;
+  text-align: left;
+  padding: 4rem 2rem;
+}
+
+.cta-section {
+  max-width: 1200px;
+  padding: 2rem;
+  text-align: left;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background: #ffcc00;
+  color: #111;
+}

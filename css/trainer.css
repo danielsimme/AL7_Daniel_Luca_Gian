@@ -1,0 +1,113 @@
+/* ========== Trainer ========== */
+    .reaction-trainer {
+      text-align: center;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .key-instructions {
+      list-style: none;
+      padding: 0;
+      margin: 1rem auto;
+      max-width: 400px;
+      text-align: left;
+      font-size: 1rem;
+    }
+
+    .btn-start {
+      background-color: #ff5050;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-start:hover {
+      background-color: #e60000;
+    }
+
+    #gameHUD {
+      margin-top: 2rem;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .opponent {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      backdrop-filter: blur(5px);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .opponent img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    #prompt {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .result {
+      font-size: 1.2rem;
+      color: #00ff99;
+      min-height: 1.5rem;
+      text-align: center;
+    }
+
+    .glove-left,
+    .glove-right {
+      position: absolute;
+      top: 50%;
+      width: 60px;
+      transform: translateY(-50%);
+      transition: transform 0.2s ease;
+    }
+
+    .glove-left {
+      left: -80px;
+      transform: scaleX(-1) translateY(-50%);
+    }
+
+    .glove-right {
+      right: -80px;
+    }
+
+/* === Punch Animations === */
+.punch-left {
+  animation: punch-left 0.2s forwards;
+}
+
+@keyframes punch-left {
+  0% { transform: scaleX(-1) translateY(-50%) translateX(0); }
+  50% { transform: scaleX(-1) translateY(-50%) translateX(-40px); }
+  100% { transform: scaleX(-1) translateY(-50%) translateX(0); }
+}
+
+.punch-right {
+  animation: punch-right 0.2s forwards;
+}
+
+@keyframes punch-right {
+  0% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-40px); }
+  100% { transform: translateY(-50%) translateX(0); }
+}
